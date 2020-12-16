@@ -31,12 +31,6 @@ docker build . -t kn0x/notegen:latest
 
 ### Run the container
 
-First ensure the data directory is writable by the pandoc user inside the container
-
-```bash
-chmod 777 data
-```
-
 To generate a PDF
 
 ```bash

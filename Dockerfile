@@ -12,8 +12,7 @@ RUN set -eux \
     && useradd -r -M -g pandoc --uid 800 pandoc
 
 COPY eisvogel.tex /usr/share/pandoc/data/templates/eisvogel.latex
-COPY notegen /usr/local/bin/notegen
 
 WORKDIR /data
 USER pandoc
-ENTRYPOINT ["notegen"]
+ENTRYPOINT ["/usr/bin/pandoc --template /data/eisvogel.latex --from markdown --pdf-engine xelatex --template eisvogel --listings "]

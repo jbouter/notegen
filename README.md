@@ -37,14 +37,8 @@ First ensure the data directory is writable by the pandoc user inside the contai
 chmod 777 data
 ```
 
-To just generate a PDF
+To generate a PDF
 
 ```bash
-docker run -v $(pwd)/data:/data:rw kn0x/notegen /data/example.md
-```
-
-To generate a PDF and DOCX
-
-```bash
-docker run -v $(pwd)/data:/data:rw kn0x/notegen -d /data/example.md
+docker run -v $(pwd):/data:ro kn0x/notegen /data/example.md > example.pdf
 ```

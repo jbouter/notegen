@@ -3,8 +3,6 @@ title: notegen example
 titlepage: true
 ---
 
-# Page title
-
 ## This is an example
 
 This document is just an example

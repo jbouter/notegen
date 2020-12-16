@@ -5,8 +5,8 @@ LABEL maintainer="docker@kn0x.org" \
 
 RUN set -eux \
     && apt-get update \
-    && apt-get install -y texlive texlive-xetex texlive-fonts-recommended \
-    texlive-fonts-extra pandoc python3 \
+    && apt-get install -y --no-install-recommends texlive texlive-xetex \
+    texlive-fonts-recommended texlive-fonts-extra pandoc python3 \
     && rm -rf /var/cache/apt \
     && groupadd -r --gid 800 pandoc \
     && useradd -r -M -g pandoc --uid 800 pandoc

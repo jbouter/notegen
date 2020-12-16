@@ -1,6 +1,6 @@
 # notegen
-Note generating application in a container
 
+Note generating application in a container
 
 ## Notegen Usage
 

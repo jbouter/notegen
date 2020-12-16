@@ -4,8 +4,8 @@ LABEL maintainer="docker@kn0x.org" \
       repo="https://github.com/jbouter/notegen"
 
 RUN set -eux \
-    && apt update \
-    && apt install -y texlive texlive-xetex texlive-fonts-recommended \
+    && apt-get update \
+    && apt-get install -y texlive texlive-xetex texlive-fonts-recommended \
     texlive-fonts-extra pandoc python3 \
     && rm -rf /var/cache/apt \
     && groupadd -r --gid 800 pandoc \

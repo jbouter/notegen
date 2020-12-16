@@ -3,15 +3,17 @@ title: notegen example
 titlepage: true
 ---
 
-# This is an example
+# Page title
+
+## This is an example
 
 This document is just an example
 
-# Second chapter
+## Second chapter
 
 It even has a second chapter!
 
-# Third chapter
+## Third chapter
 
 And a third chapter with a table in it
 

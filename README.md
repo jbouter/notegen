@@ -26,7 +26,7 @@ for the dependencies of `notegen` and `pandoc`.
 ### Build it yourself
 
 ```bash
-docker build . -t kn0x/notegen:latest
+docker build . -t kyentei/notegen:latest
 ```
 
 ### Run the container
@@ -34,5 +34,5 @@ docker build . -t kn0x/notegen:latest
 To generate a PDF
 
 ```bash
-docker run -v $(pwd):/data:ro kn0x/notegen /data/example.md > example.pdf
+docker run -v $(pwd):/data:ro kyentei/notegen /data/example.md > example.pdf
 ```

@@ -6,13 +6,16 @@ LABEL maintainer="docker@kn0x.org" \
 RUN set -eux \
     && apt-get update \
     && apt-get install -y --no-install-recommends texlive texlive-xetex \
-    texlive-fonts-recommended texlive-fonts-extra pandoc python3 \
-    && rm -rf /var/cache/apt \
+    texlive-fonts-recommended texlive-fonts-extra lmodern pandoc python3 \
+    && rm -rf /var/cache/apt
+
+RUN set -eux \
     && groupadd -r --gid 800 pandoc \
-    && useradd -r -M -g pandoc --uid 800 pandoc
+    && useradd -r -m -g pandoc -d /usr/local/share/pandoc --uid 800 pandoc \
+    && ln -s /dev/stdout /usr/local/share/pandoc/stdout.pdf
 
 COPY eisvogel.tex /usr/share/pandoc/data/templates/eisvogel.latex
 
-WORKDIR /data
+WORKDIR /usr/local/share/pandoc/
 USER pandoc
-ENTRYPOINT ["/usr/bin/pandoc --template /data/eisvogel.latex --from markdown --pdf-engine xelatex --template eisvogel --listings "]
+ENTRYPOINT ["/usr/bin/pandoc", "--template", "eisvogel.latex", "-f", "markdown", "--pdf-engine", "xelatex", "--listings", "-o", "/usr/local/share/pandoc/stdout.pdf"]

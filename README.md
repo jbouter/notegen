@@ -23,6 +23,12 @@ without using the container, please see
 [roaldnefs/writeup-template](https://github.com/roaldnefs/writeup-template)
 for the dependencies of `notegen` and `pandoc`.
 
+### Pull it from dockerhub
+
+```bash
+docker pull kyentei/notegen:latest
+```
+
 ### Build it yourself
 
 ```bash

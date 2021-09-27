@@ -24,12 +24,8 @@ jobs:
       - name: Prepare tags
         id: prep
         run: |
-          DOCKER_NAMESPACE=kyentei
-          DOCKER_IMAGE=notegen
           RELEASE_TAG="${GITHUB_REF#refs/*/}"
-          TAGS="${GITHUB_REF#refs/*/} latest"
-          echo ::set-output name=namespace::${DOCKER_NAMESPACE}
-          echo ::set-output name=image::${DOCKER_IMAGE}
+          TAGS="kyentei/notegen:${GITHUB_REF#refs/*/},kyentei/notegen:latest"
           echo ::set-output name=release_tag::${RELEASE_TAG}
           echo ::set-output name=tags::${TAGS}
       - name: Login to Dockerhub
